@@ -1,0 +1,21 @@
+.header-tab {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  background: rgba(0,0,0,.98);
+}
+.header-tab a {
+  width: 50%;
+  line-height: 39px;
+  background: rgba(255,255,255,0.02);
+  text-align: center;
+  font-size: 14px;
+  color: rgba(255,255,255,.5);
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  cursor: pointer;
+}
+.header-tab a.active {
+  background: #161619;
+  border-bottom: 1px solid #161619;
+  color: #fff;
+}

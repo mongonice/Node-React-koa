@@ -1,0 +1,25 @@
+.tips {
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 500px;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 30px;
+  border-radius: 20px;
+  transition: top .8s ease-in-out; }
+  .tips.show {
+    top: 12%; }
+
+.tips-error {
+  background: #d9534f; }
+
+.tips-info {
+  background: #5bc0de; }
+
+.tips-success {
+  background: #449d44; }
+
+.tips-warn {
+  background: #f0ad4e; }

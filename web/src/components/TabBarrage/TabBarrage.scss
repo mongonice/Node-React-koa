@@ -1,0 +1,76 @@
+.container {
+  padding: 20px 0;
+  min-height: 300px;
+  overflow: auto;
+  box-sizing: border-box;
+  margin-bottom: 60px;
+}
+.container::-webkit-scrollbar {
+  width: 6px;
+}
+.container::-webkit-scrollbar-thumb {
+  height: 60px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.3);
+  -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+}
+.container::-webkit-scrollbar-track {/* 滚动条小道 */
+  border-radius: 6px;
+}
+.barrage-tip {
+  color: #fff;
+  padding: 5px 30px;
+  border-radius: 10px;
+  font-size: 16px;
+  margin-bottom: 15px; 
+}
+.barrage-list {
+  padding: 0 20px;
+}
+.barrage-list>li {
+  margin-bottom: 10px;
+  color: #fff;
+}
+.lvl {
+  display: inline-block;
+  min-width: 38px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+.lvl.name100 {
+  background: url('../../assets/images/nobleicon2_1.png') no-repeat;
+  background-size: 100%;
+}
+.lvl.name200 {
+  background: url('../../assets/images/nobleicon2_2.png') no-repeat;
+  background-size: 100%;
+}
+.lvl.name300 {
+  background: url('../../assets/images/nobleicon2_3.png') no-repeat;
+  background-size: 100%;
+}
+.lvl.name400 {
+  background: url('../../assets/images/nobleicon2_4.png') no-repeat;
+  background-size: 100%;
+}
+.lvl.name500 {
+  background: url('../../assets/images/nobleicon2_5.png') no-repeat;
+  background-size: 100%;
+}
+.nickname {
+  font-size: 14px;
+  color: #FEAEFF;
+}
+.nickname.other {
+  color: #fff;
+}
+.msg {
+  word-wrap: break-word;
+  word-break: break-all;
+  font-size: 14px;
+  color: #fff;
+}
+.msg.other {
+  color: rgba(255,255,255,0.5);
+}

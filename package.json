@@ -1,0 +1,51 @@
+{
+  "name": "my-first-koa",
+  "version": "1.0.0",
+  "description": "this is a react-koa2-webpack project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "rm -rf ./web/dist && webpack --config ./web/build/webpack.dev.config.js",
+    "build": "webpack --config ./web/build/webpack.prod.config.js",
+    "start": "nodemon ./server/app.js",
+    "live": "npm run dev && npm start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "antd": "^3.7.2",
+    "babel-runtime": "^6.26.0",
+    "ejs": "^2.6.1",
+    "koa": "^2.5.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-convert": "^1.2.0",
+    "koa-jsonp": "^2.0.2",
+    "koa-logger": "^3.2.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "koa-views": "^6.1.4",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-import": "^1.8.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "jsx-loader": "^0.13.2",
+    "less-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.4.1",
+    "node-sass": "^4.9.2",
+    "nodemon": "^1.18.3",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.16.2",
+    "webpack-cli": "^3.1.0",
+    "webpack-merge": "^4.1.3"
+  }
+}
