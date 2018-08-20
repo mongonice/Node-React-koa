@@ -1,20 +1,13 @@
 const router = require('koa-router')();
-// const router = new Router();
-// const r_index = require('./index.js');
-// const r_detail = require('./detail.js');
-// const r_todo = require('./todo.js');
+// const homePage = require('../controllers/home.js');
+// const loginPage = require('../controllers/login.js');
+// router.get('/', homePage)
+// router.get('/login', loginPage)
 
-// router.use('/', r_index.routes(), r_index.allowedMethods())
-//     .use('/', r_detail.routes(), r_detail.allowedMethods())
-//     .use('/', r_todo.routes(), r_todo.allowedMethods())
+const homePage = require('./home.js');
+const loginPage = require('./login.js');
 
-const index_page = require('../controllers/index.js');
-const detail_page = require('../controllers/detail.js');
-const todo_page = require('../controllers/todo.js');
-
-
-router.get('/', index_page)
-router.get('/detail', detail_page)
-router.get('/todo', todo_page)
+router.use(homePage.routes(), homePage.allowedMethods())
+router.use(loginPage.routes(), homePage.allowedMethods())
 
 module.exports = router

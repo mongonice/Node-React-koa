@@ -1,7 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
-// const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const devMode = true;
 
 module.exports = {
     name: 'browser',
@@ -71,21 +73,27 @@ module.exports = {
     },
     devtool: '',
     plugins: [
-        // new ExtractTextPlugin('css/[name].css'), 
-        new MiniCssExtractPlugin('[name].css'),
-        // new webpack.optimize.CommonsChunkPlugin({// 已经被移除了
-        //     name: 'vendor', // 公共chunk在入口配置中的名称叫vendor
-        //     filename: 'js/[name].js',
-        //     minChunks: Infinity  // 随着entry chunk越来越多，确保没有其它模块会打包进 vendor chunk中
-        // }),
-        // new webpack.ProvidePlugin({
-        //     '$': 'jquery'
-        // }),
-        new webpack.HotModuleReplacementPlugin() //一般不用配置
+        new MiniCssExtractPlugin({
+            filename: devMode ? '[name].css' : '[name].[hash].css',  // 入口文件引用的css文件
+            chunkFilename: devMode ? '[id].css': '[id].[hash].css'  // 第三方库css文件
+        }),
+        new webpack.HotModuleReplacementPlugin(), //一般不用配置
+        new HtmlWebpackPlugin({
+            template: tempEjs,
+            chunksSortMode: 'none'
+        })
     ],
-    // devServer: {
-    //     contentBase: path.join()
-    // },
+    devServer: {
+        // proxy: {
+        //     '/api/*': {
+        //         target: 'http://127.0.0.1:11225',
+        //         changeOrigin: true,
+        //         pathRewrite: {
+        //             '^/api': '/'//这里理解成用‘/api’代替target里面的地址，后面组件中我们掉接口时直接用api代替 比如我要调用'调用'http://10.1.5.11:8080/xxx/duty?time=2017-07-07 14: 14:57:22'，直接写‘/api/xxx/duty?time=2017-07-07 14:57:22’即可
+        //         }
+        //     }
+        // }
+    },
     optimization: {
         splitChunks: {
           cacheGroups: {
